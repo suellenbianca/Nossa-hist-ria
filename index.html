@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossa História de Amor ❤️</title>
-
-    <style>
-        /* Estilo do botão de música */
-        #playBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 14px 20px;
-            background: #ff4081;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            z-index: 9999;
-        }
-
-        #playBtn:hover {
-            background: #ff1e6f;
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa História de Amor ❤️</title>
+  <style>
+    #playBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 14px 20px;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      z-index: 9999;
+    }
+    #playBtn:hover {
+      background: #ff1e6f;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Música -->
-    <audio id="musica" loop>
-        <source src="https://raw.githubusercontent.com/suellenbianca/Nossa-historia/main/pravoceguardeioamor.mp3" type="audio/mpeg">
-    </audio>
+  <!-- Use o CDN Statically para servir o mp3 -->
+  <audio id="musica" loop>
+    <source src="https://cdn.statically.io/gh/suellenbianca/Nossa-historia/main/pravoceguardeioamor.mp3" type="audio/mpeg">
+  </audio>
 
-    <!-- Botão -->
-    <button id="playBtn">🎵 Tocar música</button>
+  <button id="playBtn">🎵 Tocar música</button>
 
-    <script>
-        const musica = document.getElementById("musica");
-        const playBtn = document.getElementById("playBtn");
+  <script>
+    const musica = document.getElementById("musica");
+    const playBtn = document.getElementById("playBtn");
 
-        playBtn.addEventListener("click", () => {
-            musica.play()
-                .then(() => {
-                    playBtn.style.display = "none"; // some após tocar
-                })
-                .catch(err => {
-                    console.log("Erro ao tocar música:", err);
-                });
-        });
-    </script>
+    playBtn.addEventListener("click", () => {
+      musica.play()
+        .then(() => { playBtn.style.display = 'none'; })
+        .catch(err => console.log("Erro ao tocar música:", err));
+    });
+  </script>
 
 </body>
 </html>
