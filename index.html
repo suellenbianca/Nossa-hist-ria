@@ -5,13 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa História de Amor ❤️</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Estilo do botão de música */
+        #playBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 14px 20px;
+            background: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        #playBtn:hover {
+            background: #ff1e6f;
+            transform: scale(1.05);
+        }
+    </style>
+
 </head>
 <body>
 
-    <!-- Música em loop -->
-<audio autoplay loop>
-    <source src="https://r2---sn-jvhhjvg2-nn5e.googlevideo.com/videoplayback?expire=1764777625&ei=OQowaeGdNeu9zPsP3LajiAs&ip=80.187.121.138&id=o-ANkFV1g2IHxIgYHfdNHZ0i-G-AlOBoa1nv8YhRo3n02p&itag=251&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&rms=au%2Cau&bui=AdEuB5SA6vdjA-vazUwLIyGFVQ4rCcx68Lc4DQxZdIcXs4-PRxgdpDGH20qBly4zY-9M2lqQGHqLdh-G&spc=6b0G_MPJpM6R&vprv=1&svpuc=1&mime=audio%2Fwebm&rqh=1&gir=yes&clen=4256617&dur=254.061&lmt=1742649617658562&keepalive=yes&fexp=51552689%2C51565116%2C51565682%2C51580968&c=ANDROID&txp=5532534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhAPRODgU2LC-4BTmoAnY4MaueIo1Gq9-rhFcTmUtRfL9xAiA3RQ20jK3x9SdWVYDN0opNGtHy-rMlqnwjIy4ax7FjtA%3D%3D&timestamp=1764760893834&cms_redirect=yes&cps=144&met=1764761010,&mh=6o&mip=170.79.248.188&mm=31&mn=sn-jvhhjvg2-nn5e&ms=au&mt=1764760383&mv=m&mvi=2&pl=24&lsparams=cps,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRAIgebRtP-CzGrzIECQtAuLfTHbREvbnuNIy0FlyUf25dnECIFgM9EFs-qg6KOhW1hpAJmUVCxGTCy1MjBzGuARpgLgz" type="audio/webm">
-</audio>
+    <!-- Música com botão -->
+    <audio id="musica" loop>
+        <source src="https://files.catbox.moe/23n3a4.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="playBtn">🎵 Tocar música</button>
+
+    <script>
+        const musica = document.getElementById("musica");
+        const btn = document.getElementById("playBtn");
+
+        btn.addEventListener("click", () => {
+            musica.play();
+            btn.style.display = "none";
+        });
+    </script>
+
+
 
     <header class="hero">
         <h1>Para o Meu Amor, Júlio Vinícius</h1>
@@ -25,13 +64,17 @@
         <section id="historia">
             <h2>Nossa História ❤️</h2>
             <p>
-                Tudo começou em agosto de 2024, quando nos conhecemos por causa das fotos no Congresso. E de uma simples mensagem para enviar as fotos, passamos a conversar todos os dias despertando sentimentos em nós dois.
+                Tudo começou em agosto de 2024, quando nos conhecemos por causa das fotos no Congresso. 
+                E de uma simples mensagem para enviar as fotos, passamos a conversar todos os dias despertando sentimentos em nós dois.
             </p>
             <p>
-                Com o tempo, percebemos que éramos feitos um para o outro. Cada dia ao seu lado é uma nova aventura e um novo motivo para sorrir. Cada momento com você se torna uma memória especial, tem amor que chega e vira lar, e você é esse amor. 
+                Com o tempo, percebemos que éramos feitos um para o outro. Cada dia ao seu lado é uma nova aventura e um novo motivo para sorrir. 
+                Cada momento com você se torna uma memória especial, tem amor que chega e vira lar, e você é esse amor. 
             </p>
             <p>
-                Desde então, criamos tantas memórias incríveis e mal posso esperar por todas as que ainda virão. Você é o meu presente, meu futuro e a melhor parte do meu dia. Feliz um ano meu amor, AMO VOCÊ!
+                Desde então, criamos tantas memórias incríveis e mal posso esperar por todas as que ainda virão. 
+                Você é o meu presente, meu futuro e a melhor parte do meu dia. 
+                Feliz um ano meu amor, AMO VOCÊ!
             </p>
         </section>
 
@@ -60,7 +103,7 @@
                 <div><img src="./foto20.jpeg" alt="Nossa foto 20"></div>
                 <div><img src="./foto21.jpeg" alt="Nossa foto 21"></div>
                 <div><img src="./foto22.jpeg" alt="Nossa foto 22"></div>
-                </div>
+            </div>
         </section>
     </main>
 
@@ -69,28 +112,24 @@
     </footer>
 
     <script>
-        // 🚨 MUDE ESTA DATA PARA O DIA EXATO EM QUE COMEÇARAM A NAMORAR (Ano-Mês-Dia)
-        const dataInicio = new Date("2024-12-07"); 
+        // DATA DE INÍCIO DO RELACIONAMENTO
+        const dataInicio = new Date("2024-12-07");
 
-        const umDiaEmMilissegundos = 1000 * 60 * 60 * 24; 
+        const umDia = 1000 * 60 * 60 * 24;
 
         function atualizarContador() {
-            const dataAtual = new Date();
-            const diferencaTempo = dataAtual.getTime() - dataInicio.getTime();
-            const diferencaDias = Math.floor(diferencaTempo / umDiaEmMilissegundos);
+            const hoje = new Date();
+            const diferenca = hoje.getTime() - dataInicio.getTime();
+            const dias = Math.floor(diferenca / umDia);
 
-            const elementoContador = document.getElementById("contador-dias");
-
-            if (elementoContador) {
-                elementoContador.innerHTML = `Estamos juntos há **${diferencaDias}** dias!`;
-            }
+            document.getElementById("contador-dias")
+                .innerHTML = `Estamos juntos há <strong>${dias}</strong> dias!`;
         }
 
         atualizarContador();
-        // Atualiza a cada hora
-        setInterval(atualizarContador, 1000 * 60 * 60); 
+        setInterval(atualizarContador, 1000 * 60 * 60);
     </script>
 
 </body>
-
 </html>
+
